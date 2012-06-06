@@ -20,6 +20,7 @@
 		83CE70AB1575480B006C1A78 /* IPFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CE70A91575480B006C1A78 /* IPFormatter.m */; };
 		83CE70AE1575495D006C1A78 /* FileManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CE70AD1575495D006C1A78 /* FileManipulation.m */; };
 		83CE70B115754FF6006C1A78 /* HelperInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CE70B015754FF6006C1A78 /* HelperInstaller.m */; };
+		83DDEE1C157FC6820088339F /* Knob Attention.png in Resources */ = {isa = PBXBuildFile; fileRef = 83DDEE1B157FC6820088339F /* Knob Attention.png */; };
 		83F4B7951574D6A400F0431F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F4B7941574D6A400F0431F /* Cocoa.framework */; };
 		83F4B79F1574D6A400F0431F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F4B79D1574D6A400F0431F /* InfoPlist.strings */; };
 		83F4B7A11574D6A400F0431F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F4B7A01574D6A400F0431F /* main.m */; };
@@ -89,6 +90,7 @@
 		83CE70AD1575495D006C1A78 /* FileManipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManipulation.m; sourceTree = "<group>"; };
 		83CE70AF15754FF6006C1A78 /* HelperInstaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperInstaller.h; sourceTree = "<group>"; };
 		83CE70B015754FF6006C1A78 /* HelperInstaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperInstaller.m; sourceTree = "<group>"; };
+		83DDEE1B157FC6820088339F /* Knob Attention.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Knob Attention.png"; sourceTree = "<group>"; };
 		83F4B7901574D6A400F0431F /* VNeditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNeditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F4B7941574D6A400F0431F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		83F4B7971574D6A400F0431F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				8322A49A15779E7900A5AA36 /* Knob Add.png */,
+				83DDEE1B157FC6820088339F /* Knob Attention.png */,
 				8322A49C15779E7900A5AA36 /* Knob Remove Red.png */,
 				8322A49D15779E7900A5AA36 /* Knob Valid Green.png */,
 				83F4B79C1574D6A400F0431F /* VNeditor-Info.plist */,
@@ -319,6 +322,7 @@
 				8322A4A015779E7900A5AA36 /* Knob Remove Red.png in Resources */,
 				8322A4A115779E7900A5AA36 /* Knob Valid Green.png in Resources */,
 				832FBE8315791177000BED5F /* MainWindow.xib in Resources */,
+				83DDEE1C157FC6820088339F /* Knob Attention.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

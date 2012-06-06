@@ -12,16 +12,18 @@
 @interface MainWindowController ()
 
 @property IBOutlet NSOutlineView *sidebar;
-@property IBOutlet NSTreeController *controller;
+@property IBOutlet NSArrayController *controller;
+@property IBOutlet NSToolbarItem *commitToolbarItem;
 
 @property NSMutableArray *networksArray;
 @property NSMutableArray *selectedIndexPaths;
 @property FileManipulation *fm;
+@property BOOL hasChanges;
 
 @end
 
 @implementation MainWindowController
-@synthesize sidebar, controller, networksArray, selectedIndexPaths, fm;
+@synthesize sidebar, controller, commitToolbarItem, networksArray, selectedIndexPaths, fm, hasChanges;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -30,6 +32,14 @@
 
         fm = [[FileManipulation alloc] init];
         networksArray = [fm readVirtualNetworks];
+        
+        for ( id obj in networksArray )
+        {
+            for( NSString *aKey in obj )
+            {
+                [obj addObserver:self forKeyPath:aKey options:0 context:nil];
+            }
+        }
         
         //NSMutableArray *vmsArray = [[NSMutableArray alloc] init];
         
@@ -58,9 +68,17 @@
    // NSUInteger indexArr[] = {0,0};
    // NSIndexPath *myIP = [NSIndexPath indexPathWithIndexes:indexArr length:2];
    // [controller setSelectionIndexPath:myIP];
+    [controller addObserver:self forKeyPath:@"arrangedObjects" options:0 context:nil];
 }
 
-- (NSView *) outlineView:(NSOutlineView *)outlineView
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"changes!");
+    [self setHasChanges:TRUE];
+    [commitToolbarItem setImage:[NSImage imageNamed:@"Knob Attention.png"]];
+}
+
+- (NSView *)outlineView:(NSOutlineView *)outlineView
       viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
     BOOL isHeader = [[[item representedObject] objectForKey:@"header"] boolValue];
@@ -68,12 +86,12 @@
                                          owner:self];
 }
 
-- (BOOL) outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
 {
     return [[[item representedObject] objectForKey:@"header"] boolValue];
 }
 
-- (BOOL) outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
 {
     return ![[[item representedObject] objectForKey:@"header"] boolValue];
 }
@@ -81,7 +99,10 @@
 - (IBAction)commitAction:(id)sender
 {
     //dosaveaction
-    [fm writeVirtualNetworks:networksArray];
+    if ( [fm writeVirtualNetworks:networksArray] )
+    {
+        [commitToolbarItem setImage:[NSImage imageNamed:@"Knob Valid Green.png"]];
+    }
 }
 
 @end

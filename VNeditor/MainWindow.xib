@@ -286,7 +286,7 @@
 											<string key="NSFrameSize">{551, 264}</string>
 											<reference key="NSSuperview" ref="925742054"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="106244070"/>
+											<reference key="NSNextKeyView" ref="179083696"/>
 											<string key="NSReuseIdentifierKey">_NS:1828</string>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTableHeaderView" key="NSHeaderView" id="917600677">
@@ -300,12 +300,10 @@
 												<string key="NSHuggingPriority">{250, 250}</string>
 												<reference key="NSTableView" ref="161184821"/>
 											</object>
-											<object class="_NSCornerView" key="NSCornerView" id="657585640">
-												<reference key="NSNextResponder" ref="190042097"/>
+											<object class="_NSCornerView" key="NSCornerView">
+												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">-2147483392</int>
 												<string key="NSFrame">{{224, 0}, {16, 17}}</string>
-												<reference key="NSSuperview" ref="190042097"/>
-												<reference key="NSWindow"/>
 												<string key="NSReuseIdentifierKey">_NS:1833</string>
 											</object>
 											<array class="NSMutableArray" key="NSTableColumns">
@@ -670,7 +668,6 @@
 									<string key="NSFrame">{{0, 266}, {551, 15}}</string>
 									<reference key="NSSuperview" ref="190042097"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:1847</string>
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="190042097"/>
@@ -692,19 +689,17 @@
 									<reference key="NSBGColor" ref="666671255"/>
 									<int key="NScvFlags">4</int>
 								</object>
-								<reference ref="657585640"/>
 							</array>
 							<string key="NSFrame">{{-1, 20}, {551, 281}}</string>
 							<reference key="NSSuperview" ref="681067824"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="179083696"/>
+							<reference key="NSNextKeyView" ref="925742054"/>
 							<string key="NSReuseIdentifierKey">_NS:1824</string>
 							<int key="NSsFlags">133680</int>
 							<reference key="NSVScroller" ref="106244070"/>
 							<reference key="NSHScroller" ref="674419134"/>
 							<reference key="NSContentView" ref="925742054"/>
 							<reference key="NSHeaderClipView" ref="179083696"/>
-							<reference key="NSCornerView" ref="657585640"/>
 							<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 						</object>
 					</array>
@@ -713,7 +708,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="190042097"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{550, 369}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<string key="NSFrameAutosaveName">VNEWindow</string>
@@ -734,6 +729,22 @@
 						<reference key="destination" ref="367628481"/>
 					</object>
 					<int key="connectionID">77</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">commitToolbarItem</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="367628481"/>
+					</object>
+					<int key="connectionID">88</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">controller</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1068036753"/>
+					</object>
+					<int key="connectionID">89</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1228,7 +1239,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">87</int>
+			<int key="maxID">89</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1244,13 +1255,18 @@
 					<string key="className">MainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="controller">NSTreeController</string>
+						<string key="commitToolbarItem">NSToolbarItem</string>
+						<string key="controller">NSArrayController</string>
 						<string key="sidebar">NSOutlineView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="commitToolbarItem">
+							<string key="name">commitToolbarItem</string>
+							<string key="candidateClassName">NSToolbarItem</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="controller">
 							<string key="name">controller</string>
-							<string key="candidateClassName">NSTreeController</string>
+							<string key="candidateClassName">NSArrayController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="sidebar">
 							<string key="name">sidebar</string>
