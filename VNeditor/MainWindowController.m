@@ -33,13 +33,7 @@
         fm = [[FileManipulation alloc] init];
         networksArray = [fm readVirtualNetworks];
         
-        for ( id obj in networksArray )
-        {
-            for( NSString *aKey in obj )
-            {
-                [obj addObserver:self forKeyPath:aKey options:0 context:nil];
-            }
-        }
+        [self registerForKeyPaths];
         
         //NSMutableArray *vmsArray = [[NSMutableArray alloc] init];
         
@@ -73,8 +67,6 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"changes!");
-    [self setHasChanges:TRUE];
     [commitToolbarItem setImage:[NSImage imageNamed:@"Knob Attention.png"]];
 }
 
@@ -99,9 +91,22 @@
 - (IBAction)commitAction:(id)sender
 {
     //dosaveaction
+    [self registerForKeyPaths];
+    
     if ( [fm writeVirtualNetworks:networksArray] )
     {
         [commitToolbarItem setImage:[NSImage imageNamed:@"Knob Valid Green.png"]];
+    }
+}
+
+- (void)registerForKeyPaths
+{
+    for ( id obj in networksArray )
+    {
+        for( NSString *aKey in obj )
+        {
+            [obj addObserver:self forKeyPath:aKey options:0 context:nil];
+        }
     }
 }
 
