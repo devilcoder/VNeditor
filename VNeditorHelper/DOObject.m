@@ -35,9 +35,4 @@
     
 }
 
-- (BOOL)isInstalled
-{
-    return TRUE;
-}
-
 @end

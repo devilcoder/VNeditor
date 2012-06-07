@@ -12,6 +12,4 @@
 
 - (BOOL)writeFile:(NSString *)inputString;
 
-- (BOOL)isInstalled;
-
 @end

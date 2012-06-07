@@ -7,8 +7,19 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "FileManipulation.h"
+#import "MainWindowController.h"
 
 @interface MainWindowController : NSWindowController <NSOutlineViewDelegate>
+
+@property IBOutlet NSOutlineView *sidebar;
+@property IBOutlet NSArrayController *controller;
+@property IBOutlet NSToolbarItem *commitToolbarItem;
+
+@property NSMutableArray *networksArray;
+@property NSMutableArray *selectedIndexPaths;
+@property FileManipulation *fm;
+@property BOOL hasChanges;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
 

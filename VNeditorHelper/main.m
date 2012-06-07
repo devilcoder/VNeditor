@@ -23,19 +23,20 @@ int main(int argc, const char * argv[])
         launch_data_t machData = launch_data_dict_lookup(resp, LAUNCH_JOBKEY_MACHSERVICES);
         launch_data_t machPortData = launch_data_dict_lookup(machData, "com.ctcampbell.VNeditorHelper.mach");
         
-        mach_port_t mp = launch_data_get_machport(machPortData);
+        mach_port_t machPort = launch_data_get_machport(machPortData);
         launch_data_free(req);
         launch_data_free(resp);
         
-        NSMachPort *rp = [[NSMachPort alloc] initWithMachPort:mp];
-        NSConnection *c = [NSConnection connectionWithReceivePort:rp sendPort:nil];
+        NSMachPort *receivePort = [[NSMachPort alloc] initWithMachPort:machPort];
+        NSConnection *connection = [NSConnection connectionWithReceivePort:receivePort sendPort:nil];
         
         DOObject *obj = [DOObject new];
-        [c setRootObject:obj];
+        [connection setRootObject:obj];
         
         [[NSRunLoop currentRunLoop] run];
         
     }
+    
     return 0;
 }
 

@@ -186,8 +186,6 @@
 				83F4B7A71574D6A500F0431F /* AppDelegate.m */,
 				83CE70AC1575495D006C1A78 /* FileManipulation.h */,
 				83CE70AD1575495D006C1A78 /* FileManipulation.m */,
-				8378608F15768B7600E1BC16 /* DDFileReader.h */,
-				8378609015768B7600E1BC16 /* DDFileReader.m */,
 				83CE70AF15754FF6006C1A78 /* HelperInstaller.h */,
 				83CE70B015754FF6006C1A78 /* HelperInstaller.m */,
 				83F4B7A91574D6A500F0431F /* MainMenu.xib */,
@@ -200,6 +198,8 @@
 				83CE70A71575480B006C1A78 /* MaskFormatter.m */,
 				83CE70A81575480B006C1A78 /* IPFormatter.h */,
 				83CE70A91575480B006C1A78 /* IPFormatter.m */,
+				8378608F15768B7600E1BC16 /* DDFileReader.h */,
+				8378609015768B7600E1BC16 /* DDFileReader.m */,
 				83F4B79B1574D6A400F0431F /* Supporting Files */,
 			);
 			path = VNeditor;
@@ -225,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				83F4B7BE1574EC5600F0431F /* main.m */,
+				839AA2A61579565D007ABA0E /* DOObject.h */,
+				839AA2A71579565D007ABA0E /* DOObject.m */,
 				83F4B7C21574EC5600F0431F /* VNeditorHelper.1 */,
 				83F4B7C71574ED9100F0431F /* com.ctcampbell.VNeditorHelper-Info.plist */,
 				83F4B7C81574EE2E00F0431F /* com.ctcampbell.VNeditorHelper-Launchd.plist */,
@@ -236,8 +238,6 @@
 		83F4B7C01574EC5600F0431F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				839AA2A61579565D007ABA0E /* DOObject.h */,
-				839AA2A71579565D007ABA0E /* DOObject.m */,
 				83F4B7C11574EC5600F0431F /* VNeditorHelper-Prefix.pch */,
 			);
 			name = "Supporting Files";

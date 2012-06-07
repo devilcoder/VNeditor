@@ -20,6 +20,7 @@
     NSNumber *number = [NSNumber numberWithBool:_boolValue];
 	return number;
 }
+
 - (id)reverseTransformedValue:(id)value
 {
     BOOL _boolValue = [value boolValue];

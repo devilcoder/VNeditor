@@ -9,10 +9,9 @@
 #import <Cocoa/Cocoa.h>
 #import "MainWindowController.h"
 #import "HelperInstaller.h"
-#import "DOObject.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property(nonatomic, strong) MainWindowController *mainWindowController;
+@property MainWindowController *mainWindowController;
 
 @end

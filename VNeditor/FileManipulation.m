@@ -16,15 +16,14 @@
 {
     NSMutableDictionary *dictOfVMnetDicts = [[NSMutableDictionary alloc] init];
     
-    //initialise fileExtras string
-    [self setFileExtras:@""];
-    
     //grab file contents and read in lines
     DDFileReader * reader = [[DDFileReader alloc] initWithFilePath:@"/Library/Preferences/VMware Fusion/networking"];
     
     //declare vnet int and nil line
     int vnet = 0;
     NSString * line = nil;
+    //initialise fileExtras string
+    [self setFileExtras:@""];
     
     while ( (line = [reader readLine]) )
     {
@@ -63,7 +62,7 @@
     //convert, sort and return array
     NSMutableArray *returnArray = [NSMutableArray arrayWithArray:[dictOfVMnetDicts allValues]];
     
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"VNET" ascending:YES];
     [returnArray sortUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
     
     return returnArray;
@@ -73,7 +72,7 @@
 - (BOOL)writeVirtualNetworks:(NSMutableArray *)array
 {
     //create file contents
-    NSString *outputString = fileExtras;
+    NSString *outputString = [self fileExtras];
     
     for ( id obj in array )
     {
@@ -88,24 +87,13 @@
 
     }
     
-    //write file
-    
     // Connect to DO
-    [self showMessage:@"Connecting to DO"];
-    NSConnection *c = [NSConnection connectionWithRegisteredName:@"com.ctcampbell.VNeditorHelper.mach" host:nil]; 
-    DOObject *proxy = (DOObject *)[c rootProxy];
+    NSConnection *connection = [NSConnection connectionWithRegisteredName:@"com.ctcampbell.VNeditorHelper.mach" host:nil]; 
+    DOObject *proxy = (DOObject *)[connection rootProxy];
     
-    // Get name from DO
-    [proxy writeFile:outputString];
-    
-    //return BOOL
-    return TRUE;
-    
-}
+    // Write file via DO
+    return [proxy writeFile:outputString];
 
-- (void)showMessage:(NSString *)msg
-{
-    //NSLog(@"%@", msg);
 }
 
 @end
