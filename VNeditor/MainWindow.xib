@@ -76,6 +76,28 @@
 					<int key="NSToolbarDisplayMode">1</int>
 					<int key="NSToolbarSizeMode">2</int>
 					<dictionary class="NSMutableDictionary" key="NSToolbarIBIdentifiedItems">
+						<object class="NSToolbarItem" key="03F1D198-A00D-499E-89D2-F0F69417A156" id="703278551">
+							<object class="NSMutableString" key="NSToolbarItemIdentifier">
+								<characters key="NS.bytes">03F1D198-A00D-499E-89D2-F0F69417A156</characters>
+							</object>
+							<string key="NSToolbarItemLabel">Reload</string>
+							<string key="NSToolbarItemPaletteLabel">Reload</string>
+							<string key="NSToolbarItemToolTip"/>
+							<nil key="NSToolbarItemView"/>
+							<object class="NSCustomResource" key="NSToolbarItemImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">Knob Refresh</string>
+							</object>
+							<nil key="NSToolbarItemTarget"/>
+							<nil key="NSToolbarItemAction"/>
+							<string key="NSToolbarItemMinSize">{0, 0}</string>
+							<string key="NSToolbarItemMaxSize">{0, 0}</string>
+							<bool key="NSToolbarItemEnabled">YES</bool>
+							<bool key="NSToolbarItemAutovalidates">YES</bool>
+							<int key="NSToolbarItemTag">-1</int>
+							<bool key="NSToolbarIsUserRemovable">YES</bool>
+							<int key="NSToolbarItemVisibilityPriority">0</int>
+						</object>
 						<object class="NSToolbarItem" key="2762627B-DACC-41C8-B937-0771C2D4C783" id="367628481">
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">2762627B-DACC-41C8-B937-0771C2D4C783</characters>
@@ -250,18 +272,20 @@
 							</object>
 						</object>
 					</dictionary>
-					<array key="NSToolbarIBAllowedItems">
+					<array class="NSMutableArray" key="NSToolbarIBAllowedItems">
 						<reference ref="178126440"/>
 						<reference ref="41755486"/>
+						<reference ref="703278551"/>
+						<reference ref="143203103"/>
 						<reference ref="367628481"/>
 						<reference ref="928734748"/>
 						<reference ref="353647455"/>
-						<reference ref="143203103"/>
 						<reference ref="169524771"/>
 					</array>
 					<array key="NSToolbarIBDefaultItems">
 						<reference ref="178126440"/>
 						<reference ref="41755486"/>
+						<reference ref="703278551"/>
 						<reference ref="353647455"/>
 						<reference ref="367628481"/>
 					</array>
@@ -754,7 +778,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="190042097"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
 				<string key="NSMinSize">{550, 369}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<string key="NSFrameAutosaveName">VNEWindow</string>
@@ -791,6 +815,22 @@
 						<reference key="destination" ref="1068036753"/>
 					</object>
 					<int key="connectionID">89</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">refreshToolbarItem</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="703278551"/>
+					</object>
+					<int key="connectionID">108</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">refreshAction:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="703278551"/>
+					</object>
+					<int key="connectionID">109</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1019,6 +1059,7 @@
 							<reference ref="143203103"/>
 							<reference ref="353647455"/>
 							<reference ref="928734748"/>
+							<reference ref="703278551"/>
 						</array>
 						<reference key="parent" ref="46497991"/>
 					</object>
@@ -1238,6 +1279,11 @@
 						<reference key="object" ref="127003263"/>
 						<reference key="parent" ref="936786619"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">107</int>
+						<reference key="object" ref="703278551"/>
+						<reference key="parent" ref="1039613442"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1248,6 +1294,7 @@
 				<integer value="1041" key="106.IBNumberFormatterBehaviorMetadataKey"/>
 				<boolean value="YES" key="106.IBNumberFormatterLocalizesFormatMetadataKey"/>
 				<string key="106.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="107.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1293,7 +1340,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">106</int>
+			<int key="maxID">109</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1308,9 +1355,24 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">MainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="commitAction:">id</string>
+						<string key="refreshAction:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="commitAction:">
+							<string key="name">commitAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="refreshAction:">
+							<string key="name">refreshAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="commitToolbarItem">NSToolbarItem</string>
 						<string key="controller">NSArrayController</string>
+						<string key="refreshToolbarItem">NSToolbarItem</string>
 						<string key="sidebar">NSOutlineView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1321,6 +1383,10 @@
 						<object class="IBToOneOutletInfo" key="controller">
 							<string key="name">controller</string>
 							<string key="candidateClassName">NSArrayController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="refreshToolbarItem">
+							<string key="name">refreshToolbarItem</string>
+							<string key="candidateClassName">NSToolbarItem</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="sidebar">
 							<string key="name">sidebar</string>
@@ -1348,6 +1414,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="Knob Add">{32, 32}</string>
+			<string key="Knob Refresh">{32, 32}</string>
 			<string key="Knob Remove Red">{32, 32}</string>
 			<string key="Knob Valid Green">{32, 32}</string>
 			<string key="NSMenuCheckmark">{11, 11}</string>

@@ -10,7 +10,7 @@
 
 @implementation MainWindowController
 
-@synthesize sidebar, controller, commitToolbarItem, networksArray, selectedIndexPaths, fm, hasChanges;
+@synthesize sidebar, controller, commitToolbarItem, refreshToolbarItem, networksArray, selectedIndexPaths, fm, hasChanges;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -18,7 +18,7 @@
     if (self) {
 
         fm = [[FileManipulation alloc] init];
-        networksArray = [fm readVirtualNetworks];
+        [self setNetworksArray:[fm readVirtualNetworks]];
         
         [self registerForKeyPaths];
         
@@ -29,13 +29,34 @@
 
 - (void)windowDidLoad
 {
+    [refreshToolbarItem setEnabled:FALSE];
     [controller addObserver:self forKeyPath:@"arrangedObjects" options:0 context:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     [self registerForKeyPaths];
+    [refreshToolbarItem setEnabled:TRUE];
     [commitToolbarItem setImage:[NSImage imageNamed:@"Knob Attention.png"]];
+}
+
+-(BOOL)validateToolbarItem:(NSToolbarItem *)toolbarItem
+{
+    if ( [[toolbarItem label] compare:@"Reload"] == NSOrderedSame )
+    {
+        if ( [[[commitToolbarItem image] name] compare:@"Knob Valid Green"] == NSOrderedSame )
+        {
+            return FALSE;
+        }
+        else
+        {
+            return TRUE;
+        }
+    }
+    else
+    {
+        return TRUE;
+    }
 }
 
 - (IBAction)commitAction:(id)sender
@@ -45,6 +66,13 @@
     {
         [commitToolbarItem setImage:[NSImage imageNamed:@"Knob Valid Green.png"]];
     }
+}
+
+- (IBAction)refreshAction:(id)sender
+{
+    [self setNetworksArray:[fm readVirtualNetworks]];
+    [refreshToolbarItem setEnabled:FALSE];
+    [commitToolbarItem setImage:[NSImage imageNamed:@"Knob Valid Green.png"]];
 }
 
 - (void)registerForKeyPaths

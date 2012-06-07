@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8300A4DA15812C70003DE943 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8300A4D915812C70003DE943 /* plus.png */; };
+		8300A4E515812E93003DE943 /* Knob Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 8300A4E415812E93003DE943 /* Knob Refresh.png */; };
 		8322A48F15778ACE00A5AA36 /* BoolValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8322A48E15778ACE00A5AA36 /* BoolValueTransformer.m */; };
 		8322A49915779E4B00A5AA36 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8322A49815779E4B00A5AA36 /* icon.icns */; };
 		8322A49E15779E7900A5AA36 /* Knob Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 8322A49A15779E7900A5AA36 /* Knob Add.png */; };
@@ -69,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8300A4D915812C70003DE943 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		8300A4E415812E93003DE943 /* Knob Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Knob Refresh.png"; sourceTree = "<group>"; };
 		8322A48D15778ACE00A5AA36 /* BoolValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoolValueTransformer.h; sourceTree = "<group>"; };
 		8322A48E15778ACE00A5AA36 /* BoolValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoolValueTransformer.m; sourceTree = "<group>"; };
 		8322A49815779E4B00A5AA36 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				83DDEE1B157FC6820088339F /* Knob Attention.png */,
 				8322A49C15779E7900A5AA36 /* Knob Remove Red.png */,
 				8322A49D15779E7900A5AA36 /* Knob Valid Green.png */,
+				8300A4E415812E93003DE943 /* Knob Refresh.png */,
+				8300A4D915812C70003DE943 /* plus.png */,
 				83F4B79C1574D6A400F0431F /* VNeditor-Info.plist */,
 				83F4B79D1574D6A400F0431F /* InfoPlist.strings */,
 				83F4B7A01574D6A400F0431F /* main.m */,
@@ -323,6 +329,8 @@
 				8322A4A115779E7900A5AA36 /* Knob Valid Green.png in Resources */,
 				832FBE8315791177000BED5F /* MainWindow.xib in Resources */,
 				83DDEE1C157FC6820088339F /* Knob Attention.png in Resources */,
+				8300A4DA15812C70003DE943 /* plus.png in Resources */,
+				8300A4E515812E93003DE943 /* Knob Refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,12 +15,15 @@
 @property IBOutlet NSOutlineView *sidebar;
 @property IBOutlet NSArrayController *controller;
 @property IBOutlet NSToolbarItem *commitToolbarItem;
+@property IBOutlet NSToolbarItem *refreshToolbarItem;
 
 @property NSMutableArray *networksArray;
 @property NSMutableArray *selectedIndexPaths;
 @property FileManipulation *fm;
 @property BOOL hasChanges;
 
+- (IBAction)commitAction:(id)sender;
+- (IBAction)refreshAction:(id)sender;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
 
 @end
