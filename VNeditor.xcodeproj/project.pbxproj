@@ -141,6 +141,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831D07FB15814DBC00EF2262 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8322A48D15778ACE00A5AA36 /* BoolValueTransformer.h */,
+				8322A48E15778ACE00A5AA36 /* BoolValueTransformer.m */,
+				83CE70A61575480B006C1A78 /* MaskFormatter.h */,
+				83CE70A71575480B006C1A78 /* MaskFormatter.m */,
+				83CE70A81575480B006C1A78 /* IPFormatter.h */,
+				83CE70A91575480B006C1A78 /* IPFormatter.m */,
+				8378608F15768B7600E1BC16 /* DDFileReader.h */,
+				8378609015768B7600E1BC16 /* DDFileReader.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		83F4B7851574D6A400F0431F = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +201,7 @@
 		83F4B79A1574D6A400F0431F /* VNeditor */ = {
 			isa = PBXGroup;
 			children = (
+				831D07FB15814DBC00EF2262 /* Utilities */,
 				83F4B7A61574D6A500F0431F /* AppDelegate.h */,
 				83F4B7A71574D6A500F0431F /* AppDelegate.m */,
 				83CE70AC1575495D006C1A78 /* FileManipulation.h */,
@@ -196,14 +212,6 @@
 				835408291576C6160004BC07 /* MainWindowController.h */,
 				8354082A1576C6160004BC07 /* MainWindowController.m */,
 				832FBE8215791177000BED5F /* MainWindow.xib */,
-				8322A48D15778ACE00A5AA36 /* BoolValueTransformer.h */,
-				8322A48E15778ACE00A5AA36 /* BoolValueTransformer.m */,
-				83CE70A61575480B006C1A78 /* MaskFormatter.h */,
-				83CE70A71575480B006C1A78 /* MaskFormatter.m */,
-				83CE70A81575480B006C1A78 /* IPFormatter.h */,
-				83CE70A91575480B006C1A78 /* IPFormatter.m */,
-				8378608F15768B7600E1BC16 /* DDFileReader.h */,
-				8378609015768B7600E1BC16 /* DDFileReader.m */,
 				83F4B79B1574D6A400F0431F /* Supporting Files */,
 			);
 			path = VNeditor;
