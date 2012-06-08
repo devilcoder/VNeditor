@@ -268,6 +268,7 @@
 				83F4B78D1574D6A400F0431F /* Frameworks */,
 				83F4B78E1574D6A400F0431F /* Resources */,
 				83F4B7CB1574EF7700F0431F /* CopyFiles */,
+				83247183158223F900489921 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -343,6 +344,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83247183158223F900489921 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ${CONFIGURATION} != \"Debug\" ]\nthen\ncd \"${BUILT_PRODUCTS_DIR}\"\nrm -f \"/Users/Chris/Projects/VNeditor/VNeditor.zip\"\nrm -f \"VNeditor.zip\"\nzip -r \"VNeditor.zip\" \"VNeditor.app\"\ncp \"VNeditor.zip\" \"/Users/Chris/Projects/VNeditor\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83F4B78C1574D6A400F0431F /* Sources */ = {
@@ -473,6 +490,8 @@
 				INFOPLIST_FILE = "VNeditor/VNeditor-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SEPARATE_STRIP = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -481,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Chris Campbell";
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
@@ -491,6 +511,8 @@
 				INFOPLIST_FILE = "VNeditor/VNeditor-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SEPARATE_STRIP = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

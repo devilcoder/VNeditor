@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 
-
 @implementation AppDelegate
 
 @synthesize mainWindowController;
