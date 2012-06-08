@@ -285,6 +285,7 @@
 					<array key="NSToolbarIBDefaultItems">
 						<reference ref="178126440"/>
 						<reference ref="41755486"/>
+						<reference ref="928734748"/>
 						<reference ref="703278551"/>
 						<reference ref="353647455"/>
 						<reference ref="367628481"/>
@@ -311,7 +312,7 @@
 											<string key="NSFrameSize">{551, 264}</string>
 											<reference key="NSSuperview" ref="925742054"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="106244070"/>
+											<reference key="NSNextKeyView" ref="179083696"/>
 											<string key="NSReuseIdentifierKey">_NS:1828</string>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTableHeaderView" key="NSHeaderView" id="917600677">
@@ -737,7 +738,6 @@
 									<string key="NSFrame">{{0, 266}, {551, 15}}</string>
 									<reference key="NSSuperview" ref="190042097"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:1847</string>
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="190042097"/>
@@ -763,7 +763,7 @@
 							<string key="NSFrame">{{-1, 20}, {551, 281}}</string>
 							<reference key="NSSuperview" ref="681067824"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="179083696"/>
+							<reference key="NSNextKeyView" ref="925742054"/>
 							<string key="NSReuseIdentifierKey">_NS:1824</string>
 							<int key="NSsFlags">133680</int>
 							<reference key="NSVScroller" ref="106244070"/>
@@ -778,7 +778,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="190042097"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{550, 369}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<string key="NSFrameAutosaveName">VNEWindow</string>

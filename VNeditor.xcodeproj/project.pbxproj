@@ -141,6 +141,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831D07FB15814DBC00EF2262 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8322A48D15778ACE00A5AA36 /* BoolValueTransformer.h */,
+				8322A48E15778ACE00A5AA36 /* BoolValueTransformer.m */,
+				83CE70A61575480B006C1A78 /* MaskFormatter.h */,
+				83CE70A71575480B006C1A78 /* MaskFormatter.m */,
+				83CE70A81575480B006C1A78 /* IPFormatter.h */,
+				83CE70A91575480B006C1A78 /* IPFormatter.m */,
+				8378608F15768B7600E1BC16 /* DDFileReader.h */,
+				8378609015768B7600E1BC16 /* DDFileReader.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		83F4B7851574D6A400F0431F = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +201,7 @@
 		83F4B79A1574D6A400F0431F /* VNeditor */ = {
 			isa = PBXGroup;
 			children = (
+				831D07FB15814DBC00EF2262 /* Utilities */,
 				83F4B7A61574D6A500F0431F /* AppDelegate.h */,
 				83F4B7A71574D6A500F0431F /* AppDelegate.m */,
 				83CE70AC1575495D006C1A78 /* FileManipulation.h */,
@@ -196,14 +212,6 @@
 				835408291576C6160004BC07 /* MainWindowController.h */,
 				8354082A1576C6160004BC07 /* MainWindowController.m */,
 				832FBE8215791177000BED5F /* MainWindow.xib */,
-				8322A48D15778ACE00A5AA36 /* BoolValueTransformer.h */,
-				8322A48E15778ACE00A5AA36 /* BoolValueTransformer.m */,
-				83CE70A61575480B006C1A78 /* MaskFormatter.h */,
-				83CE70A71575480B006C1A78 /* MaskFormatter.m */,
-				83CE70A81575480B006C1A78 /* IPFormatter.h */,
-				83CE70A91575480B006C1A78 /* IPFormatter.m */,
-				8378608F15768B7600E1BC16 /* DDFileReader.h */,
-				8378609015768B7600E1BC16 /* DDFileReader.m */,
 				83F4B79B1574D6A400F0431F /* Supporting Files */,
 			);
 			path = VNeditor;
@@ -260,6 +268,7 @@
 				83F4B78D1574D6A400F0431F /* Frameworks */,
 				83F4B78E1574D6A400F0431F /* Resources */,
 				83F4B7CB1574EF7700F0431F /* CopyFiles */,
+				83247183158223F900489921 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -335,6 +344,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83247183158223F900489921 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ${CONFIGURATION} != \"Debug\" ]\nthen\ncd \"${BUILT_PRODUCTS_DIR}\"\nrm -f \"/Users/Chris/Projects/VNeditor/VNeditor.zip\"\nrm -f \"VNeditor.zip\"\nzip -r \"VNeditor.zip\" \"VNeditor.app\"\ncp \"VNeditor.zip\" \"/Users/Chris/Projects/VNeditor\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83F4B78C1574D6A400F0431F /* Sources */ = {
@@ -465,6 +490,8 @@
 				INFOPLIST_FILE = "VNeditor/VNeditor-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SEPARATE_STRIP = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -473,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Chris Campbell";
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/..\"",
@@ -483,6 +511,8 @@
 				INFOPLIST_FILE = "VNeditor/VNeditor-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SEPARATE_STRIP = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
